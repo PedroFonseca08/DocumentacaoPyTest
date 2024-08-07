@@ -1,0 +1,34 @@
+site_name: Documentação PyTest
+
+site_url: https://example.com/
+site_description: Documentação do PyTest, para o trabalho da disciplina de Desenvolvimento Web.
+site_author: Pedro Fonseca Rodrigues de Sousa, Richard Stf, Vitor Pires Zini
+
+repo_name: DocumentacaoPyTest
+repo_url: https://github.com/PedroFonseca08/DocumentacaoPyTest
+
+nav:
+  - Trabalho Realizado: index.md
+
+theme:
+  name: material
+  language: pt-BR
+  palette: 
+    # Paleta quando esta no modo light
+    - scheme: default
+      primary: pink       # cor dos menus principais
+      accent: purple  # cor dos links 
+      toggle:
+        icon: material/brightness-7     # icone para troca de modo
+        name: Trocar para modo escuro   # Paleta quando esta no modo dark
+    - scheme: slate 
+      primary: purple
+      accent: pink
+      toggle:
+        icon: material/brightness-4 # icone para troca de modo (escuro)
+        name: Trocar para modo claro
+  features:
+    - content.tabs.link             # habilita o vinculo de guias de conteúdo
+    - content.code.copy             # habilita a cópia de códigos da página
+  extra:
+    generator: false
