@@ -12,6 +12,7 @@ nav:
   - Como usar: howToUse.md
   - Exemplos: examples.md
   - Contribuidores: contributors.md
+  - Recursos: recursos.md
 theme:
   name: material
   language: pt-BR
