@@ -29,6 +29,7 @@ theme:
       toggle:
         icon: material/brightness-4 
         name: Trocar para modo claro
+  favicon: ./imgs/pytest_logo.ico
   features:
     - content.tabs.link             
     - content.code.copy       
@@ -51,3 +52,5 @@ markdown_extensions:
   - pymdownx.tabbed:            
       alternate_style: true     
   - attr_list
+
+  
