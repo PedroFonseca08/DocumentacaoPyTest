@@ -2,6 +2,16 @@
 
 O Pytest é uma ferramenta de testes para Python que se destaca pela sua simplicidade e flexibilidade. Ele facilita a criação e execução de testes automatizados em diversos tipos de projetos, desde pequenos scripts até grandes aplicações.
 
+## Benefícios dos Testes
+
+Os testes são fundamentais para garantir a qualidade e a confiabilidade de um software. Eles permitem identificar erros e bugs de forma antecipada, reduzindo os custos de manutenção e evitando problemas em produção.
+
+- **Qualidade e Estabilidade**: Testes garantem que o código funciona conforme o esperado, mesmo após modificações.
+- **Facilidade de Manutenção**: Com testes automatizados, é possível refatorar o código com segurança.
+- **Eficiência no Desenvolvimento**: Detectar problemas cedo acelera o ciclo de desenvolvimento.
+
+Investir em testes aumenta a confiança no software e melhora a experiência do usuário final.
+
 ## Instalação
 
 Digite a seguinte linha de comando para realizar a instalação do Pytest:
@@ -19,15 +29,15 @@ pytest 8.3.2
 
 ## Criando um teste
 
-Crie um arquivo test_sample.py com o seguinte código:
+Crie um arquivo test_simples.py com o seguinte código:
 
 === "python"
 ```python
-def func(x):
+def function(x):
     return x + 1
 
 def test_answer():
-    assert func(3) == 5
+    assert function(3) == 5
 ```
 
 !!! Nota
@@ -43,19 +53,19 @@ platform linux -- Python 3.x.y, pytest-8.x.y, pluggy-1.x.y
 rootdir: /home/sweet/project
 collected 1 item
 
-test_sample.py F                                                     [100%]
+test_simples.py F                                                     [100%]
 
 ================================= FAILURES =================================
 _______________________________ test_answer ________________________________
 
     def test_answer():
->       assert func(3) == 5
+>       assert function(3) == 5
 E       assert 4 == 5
-E        +  where 4 = func(3)
+E        +  where 4 = function(3)
 
-test_sample.py:6: AssertionError
+test_simples.py:6: AssertionError
 ========================= short test summary info ==========================
-FAILED test_sample.py::test_answer - assert 4 == 5
+FAILED test_simples.py::test_answer - assert 4 == 5
 ============================ 1 failed in 0.12s =============================
 ```
 
@@ -72,7 +82,7 @@ def function():
     raise SystemExit(1)
 
 
-def test_mytest():
+def test_meuTeste():
     with pytest.raises(SystemExit):
         function()
 ```
@@ -85,20 +95,20 @@ $ pytest -q test_sysexit.py
 ```
 
 
-## Agrupar vários testes em uma classe
+## Agrupando vários testes em uma classe
 
 
 Depois de desenvolver vários testes, você pode querer agrupá-los em uma classe. O Pytest possiblita a criação de uma classe contendo mais de um teste:
 
 === "python"
 ``` python
-# test_class.py
-class TestClass:
-    def test_one(self):
+# test_classe.py
+class TestClasse:
+    def test_um(self):
         x = "this"
         assert "h" in x
 
-    def test_two(self):
+    def test_dois(self):
         x = "hello"
         assert hasattr(x, "check")
 ```
@@ -123,11 +133,11 @@ self = <test_class.TestClass object at 0xdeadbeef0001>
     def test_two(self):
         x = "hello"
 >       assert hasattr(x, "check")
-E       AssertionError: assert False
+E       Assertiumrror: assert False
 E        +  where False = hasattr('hello', 'check')
 
 test_class.py:8: AssertionError
-========================= short test summary info ==========================
+===============dois======= short test summary info ==========================
 FAILED test_class.py::TestClass::test_two - AssertionError: assert False
 1 failed, 1 passed in 0.12s
 ```
