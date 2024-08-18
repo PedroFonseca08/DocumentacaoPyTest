@@ -162,4 +162,71 @@ pode ser ignorada. Essa lógica consiste no seguinte fato:
 
 Dessa forma, vamos realizar os testes e verificar o que o PyTest nos informa:
 
+```
+=============================================================== test session starts ================================================================
+platform win32 -- Python 3.12.4, pytest-8.3.2, pluggy-1.5.0 -- C:\Users\vitor\Documentos\trabalhoWeb\pyTEST\venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\vitor\Documentos\trabalhoWeb\pyTEST\banco\tests
+collected 5 items                                                                                                                                    
 
+test_contaBancaria.py::test_sacar_sem_saldo PASSED                                                                                            [ 20%] 
+test_contaBancaria.py::test_sacar_com_saldo PASSED                                                                                            [ 40%] 
+test_contaBancaria.py::test_depositar_valor_negativo PASSED                                                                                   [ 60%] 
+test_contaBancaria.py::test_depositar_valor_positivo PASSED                                                                                   [ 80%] 
+test_contaBancaria.py::test_transferir_sem_saldo FAILED                                                                                       [100%]
+
+===================================================================== FAILURES ===================================================================== 
+```
+
+Podemos observar que o último teste falhou, mas já analisamos o teste e não parece haver nada de errado com ele.
+O problema só pode estar na implementação da transferência.
+
+!!! Nota
+
+    Percebemos através desse exemplo que ao realizar um teste e analisar qual o comportamento esperado de um método e se esse comportamento foi respeitado pode nos fazer perceber algum erro na implementação do método. Mais uma vantagem de preparar testes para seu sistema.
+
+
+=== "transferir()"
+
+    ```python
+    def transferir(self, contaDestino, valor):
+        if ( valor > 0 ):
+            self.sacar(valor) # AQUI ESTÁ O PROBLEMA
+            contaDestino.depositar(valor) # O DEPÓSITO OCORRE MESMO SE O SAQUE FALHAR
+            return True
+        else:
+            return False
+    ```
+
+    ```python
+    def transferirCorreto(self, contaDestino, valor):
+        if ( valor > 0 ):
+            if ( self.sacar(valor) ): # AQUI ESTÁ O PROBLEMA
+                contaDestino.depositar(valor) # O DEPÓSITO OCORRE MESMO SE O SAQUE FALHAR
+                return True
+        return False
+    ```
+
+**Agora sim!!**
+
+**>** Vamos executar o comando pytest novamente
+
+```
+=============================================================== test session starts ================================================================
+platform win32 -- Python 3.12.4, pytest-8.3.2, pluggy-1.5.0 -- C:\Users\vitor\Documentos\trabalhoWeb\pyTEST\venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\vitor\Documentos\trabalhoWeb\pyTEST\banco\tests
+collected 5 items                                                                                                                                    
+
+test_contaBancaria.py::test_sacar_sem_saldo PASSED                                                                                            [ 20%]
+test_contaBancaria.py::test_sacar_com_saldo PASSED                                                                                            [ 40%] 
+test_contaBancaria.py::test_depositar_valor_negativo PASSED                                                                                   [ 60%] 
+test_contaBancaria.py::test_depositar_valor_positivo PASSED                                                                                   [ 80%] 
+test_contaBancaria.py::test_transferir_sem_saldo PASSED                                                                                       [100%] 
+
+================================================================ 5 passed in 0.02s ================================================================= 
+```
+
+Todos os nossos testes foram aprovados e podemos seguir com o desenvolvimento do nosso sistema de contas bancárias.
+Lembrando que de agora em diante, para verificarmos se nossos métodos continuam funcionando corretamente, basta
+executar o comando pytest e verificar o resultado. Nossa vida ficou muito mais fácil!
