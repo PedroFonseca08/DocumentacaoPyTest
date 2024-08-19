@@ -141,6 +141,7 @@ Segue o trecho de código:
         saldoConta1Depois = conta1.getSaldo() # Salvando o saldo da conta 1 após da operação
         saldoConta2Depois = conta2.getSaldo() # Salvando o saldo da conta 2 após da operação
 
+        # O Saldo das contas antes e depois deve ser o mesmo, pois a transferência não deve ocorrer.
         assert (resultado == False and saldoConta1Antes == saldoConta1Depois and saldoConta2Antes == saldoConta2Depois)
 
     ```
@@ -150,7 +151,7 @@ Podemos observar acima que foram criados dois métodos para testar as funcionali
 !!! Falhas failure
     **Sacar sem saldo e Depositar um valor negativo!**
 
-!!! success
+!!! Êxitos success
     **Sacar com saldo e Depositar um valor positivo!**
 
 Já o teste de transferência é mais interessante.
@@ -158,7 +159,9 @@ Ele envolve utilizar os outros métodos que já possuem seus próprios testes, s
 Ao analisar o código do teste de transferência, é possível perceber que há uma lógica por traz dessa operação que não
 pode ser ignorada. Essa lógica consiste no seguinte fato:
 
-**>** Caso a conta de origem da trasferência não possua saldo suficiente para realizar a operação, o valor não deve ser sacado. Isso já nos foi garantido se nosso teste de saque foi bem sucedido. Ao final da operação, é evidente que o valor de transferência deve ser decrementado do saldo da conta de origem e incrementado no saldo da conta de destino, e é justamente isso que nosso teste verifica.
+**> Caso a conta de origem da trasferência não possua saldo suficiente para realizar a operação, o valor não deve ser sacado.** 
+
+Isso já nos foi garantido se nosso teste de saque foi bem sucedido. Ao final da operação, é evidente que o valor de transferência não deve ser decrementado do saldo da conta de origem e posteriormente incrementado no saldo da conta de destino, e é justamente isso que nosso teste verifica.
 
 Dessa forma, vamos realizar os testes e verificar o que o PyTest nos informa:
 
@@ -186,23 +189,25 @@ O problema só pode estar na implementação da transferência.
     Percebemos através desse exemplo que ao realizar um teste e analisar qual o comportamento esperado de um método e se esse comportamento foi respeitado pode nos fazer perceber algum erro na implementação do método. Mais uma vantagem de preparar testes para seu sistema.
 
 
-=== "transferir()"
+=== "Transferir Errado"
 
     ```python
     def transferir(self, contaDestino, valor):
         if ( valor > 0 ):
-            self.sacar(valor) # AQUI ESTÁ O PROBLEMA
-            contaDestino.depositar(valor) # O DEPÓSITO OCORRE MESMO SE O SAQUE FALHAR
+            self.sacar(valor)# AQUI ESTÁ O PROBLEMA
+            contaDestino.depositar(valor)# O DEPÓSITO OCORRE MESMO SE O SAQUE FALHAR
             return True
         else:
             return False
     ```
 
+=== "Tranferir Correto"
+
     ```python
     def transferirCorreto(self, contaDestino, valor):
         if ( valor > 0 ):
-            if ( self.sacar(valor) ): # AQUI ESTÁ O PROBLEMA
-                contaDestino.depositar(valor) # O DEPÓSITO OCORRE MESMO SE O SAQUE FALHAR
+            if ( self.sacar(valor) ): # SE CONSEGUIR SACAR
+                contaDestino.depositar(valor) # REALIZA O DEPÓSITO
                 return True
         return False
     ```
