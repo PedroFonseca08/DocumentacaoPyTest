@@ -12,22 +12,28 @@
         <meta name="author" content="Pedro Fonseca Rodrigues de Sousa, Richard Stf, Vitor Pires Zini">
       
       
+        <link rel="canonical" href="https://pytest.com/howToUse/">
       
       
+        <link rel="prev" href="..">
       
-      <link rel="icon" href="/./imgs/pytest_logo.ico">
+      
+        <link rel="next" href="../examples/">
+      
+      
+      <link rel="icon" href="../imgs/pytest_logo.ico">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
-        <title>Documentação PyTest</title>
+        <title>Como usar - Documentação PyTest</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#uso-do-pytest" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="/." title="Documentação PyTest" class="md-header__button md-logo" aria-label="Documentação PyTest" data-md-component="logo">
+    <a href=".." title="Documentação PyTest" class="md-header__button md-logo" aria-label="Documentação PyTest" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -103,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Como usar
             
           </span>
         </div>
@@ -216,7 +227,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Documentação PyTest" class="md-nav__button md-logo" aria-label="Documentação PyTest" data-md-component="logo">
+    <a href=".." title="Documentação PyTest" class="md-nav__button md-logo" aria-label="Documentação PyTest" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -246,7 +257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -263,10 +274,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/howToUse/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Como usar
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -275,6 +306,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-de-ajuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos de ajuda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executando-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executando Testes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executando-testes-por-argumentos-de-coleta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executando testes por argumentos de coleta
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chamando-pytest-diretamente-do-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chamando Pytest diretamente do código
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plugins
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -286,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/" class="md-nav__link">
+      <a href="../examples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -306,7 +402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contributors/" class="md-nav__link">
+      <a href="../contributors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -336,6 +432,61 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-de-ajuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos de ajuda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executando-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executando Testes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executando-testes-por-argumentos-de-coleta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executando testes por argumentos de coleta
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chamando-pytest-diretamente-do-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chamando Pytest diretamente do código
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plugins
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -347,8 +498,100 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+<h1 id="uso-do-pytest">Uso do PyTest</h1>
+<p>O PyTest oferece diversas opções para executar testes no seu projeto Python. Abaixo, estão alguns dos principais comandos e funcionalidades para rodar seus testes.</p>
+<h2 id="comandos-de-ajuda">Comandos de ajuda</h2>
+<p>Obter ajuda sobre a versão, nomes de opções e variáveis de ambiente</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pytest --version # mostra de onde o pytest foi importado
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pytest --fixtures # exibe os argumentos de função embutidos disponíveis
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>pytest -h ou pytest --help # exibe ajuda sobre opções de linha de comando
+</span></code></pre></div>
+<h2 id="executando-testes">Executando Testes</h2>
+<p>Para executar todos os testes, utilize:</p>
+<p><strong>Executando testes em um arquivo</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pytest test_arquivo.py
+</span></code></pre></div>
+<p><strong>Executando testes em um diretório</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pytest test_diretorio.py
+</span></code></pre></div>
+<p>pytest -k 'MinhaClasse e não metodo'</p>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>Isso executará testes cujos nomes correspondam à expressão de string fornecida (ignorando maiúsculas e minúsculas), que pode incluir operadores Python que utilizam nomes de arquivos, nomes de classes e nomes de funções como variáveis. O exemplo acima executará TestMinhaClasse.test_qualquer, mas não TestMinhaClasse.test_metodo_simples. Use "" em vez de '' na expressão ao executar isso no Windows.</p>
+</div>
+<h2 id="executando-testes-por-argumentos-de-coleta">Executando testes por argumentos de coleta</h2>
+<p>Passe o nome do arquivo do módulo relativo ao diretório de trabalho, seguido por especificadores como o nome da classe e o nome da função separados por caracteres ::, e parâmetros de parametrização entre colchetes [].</p>
+<p><strong>Para executar um teste específico dentro de um módulo:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pytest tests/test_arquivo.py::test_funcao
+</span></code></pre></div></p>
+<p><strong>Para executar todos os testes em uma classe:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pytest tests/test_arquivo.py::TestClasse
+</span></code></pre></div></p>
+<p><strong>Especificando um método de teste específico:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pytest tests/test_arquivo.py::TestClasse::test_metodo
+</span></code></pre></div></p>
+<p><strong>specificando uma parametrização específica de um teste:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pytest tests/test_arquivo.py::test_funcao[x1,y2]
+</span></code></pre></div></p>
+<p><strong>Controlando o tempo de duração da execução do teste</strong></p>
+<p>Para obter uma lista dos 10 testes mais lentos com duração superior a 1,0s:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pytest --durations=10 --durations-min=1.0
+</span></code></pre></div></p>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>Por padrão, o pytest não mostrará as durações dos testes que são muito pequenas (&lt;0,005s), a menos que o parâmetro "-vv" seja adicionado na linha de comando.</p>
+</div>
+<h2 id="chamando-pytest-diretamente-do-codigo">Chamando Pytest diretamente do código</h2>
+<p>Você pode invocar o pytest diretamente a partir de código Python:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>retcode = pytest.main()
+</span></code></pre></div>
+Isso age como se você estivesse chamando “pytest” a partir da linha de comando. Ele não levantará SystemExit, mas retornará o código de saída. Se você não passar nenhum argumento, o main lerá os argumentos a partir dos argumentos da linha de comando do processo ("sys.argv"), o que pode não ser desejável. Você pode passar opções e argumentos explicitamente:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>retcode = pytest.main([&quot;-x&quot;, &quot;meudiretorio&quot;])
+</span></code></pre></div></p>
+<h2 id="plugins">Plugins</h2>
+<p>Você também pode utilizar plugins feitos por outras pessoas nos testes, ou até mesmo fazer seu próprio plugin.</p>
+<p>Para instalar e desistalar plugins utilize os seguintes comandos:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pytest-NAME
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>pip<span class="w"> </span>uninstall<span class="w"> </span>pytest-NAME
+</span></code></pre></div>
+Se um plugin é instalado, o pytest automaticamente acha e faz a integração, não há necessidade de ativá-los.</p>
+<p>Aqui está alguns plugins populares:</p>
+<ul>
+<li>
+<p>pytest-django: Escreve testes para aplicativos Django, utilizando a integração com pytest.</p>
+</li>
+<li>
+<p>pytest-cov: Relatórios de cobertura de código, compatível com testes distribuídos.</p>
+</li>
+<li>
+<p>pytest-instafail: Relata falhas enquanto o teste está sendo executado.</p>
+</li>
+<li>
+<p>pytest-timeout: Define limites de tempo para testes com base em marcações de funções ou definições globais.</p>
+</li>
+<li>
+<p>pytest-pep8: Uma opção "--pep8" para habilitar a verificação de conformidade com o PEP8.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -384,10 +627,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["content.tabs.link", "content.code.copy"], "search": "/assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
   </body>
