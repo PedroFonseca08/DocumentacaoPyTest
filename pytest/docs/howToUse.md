@@ -78,3 +78,28 @@ Isso age como se você estivesse chamando “pytest” a partir da linha de coma
 ```
 retcode = pytest.main(["-x", "meudiretorio"])
 ```
+
+
+## Plugins
+
+Você também pode utilizar plugins feitos por outras pessoas nos testes, ou até mesmo fazer seu próprio plugin.
+
+Para instalar e desistalar plugins utilize os seguintes comandos:
+
+```bash
+pip install pytest-NAME
+pip uninstall pytest-NAME
+```
+Se um plugin é instalado, o pytest automaticamente acha e faz a integração, não há necessidade de ativá-los.
+
+Aqui está alguns plugins populares:
+
+* pytest-django: Escreve testes para aplicativos Django, utilizando a integração com pytest.
+
+* pytest-cov: Relatórios de cobertura de código, compatível com testes distribuídos.
+
+* pytest-instafail: Relata falhas enquanto o teste está sendo executado.
+
+* pytest-timeout: Define limites de tempo para testes com base em marcações de funções ou definições globais.
+
+* pytest-pep8: Uma opção "--pep8" para habilitar a verificação de conformidade com o PEP8.
